@@ -113,11 +113,11 @@ let drawing = e => {
         drawTriangle(e);
     }
 };
-
+console.log(toolBtns);
 toolBtns.forEach(btn => {
     btn.addEventListener('click', _ => {
         // remove active class from the previous option and adding on current clicked option
-        document.querySelector('.options .active').classList.remove('active');
+        document.querySelector('.option.active').classList.remove('active');
         btn.classList.add('active');
         selectedTool = btn.id;
     });
