@@ -1,2 +1,2 @@
 ## Sketshh for painting simple paintings
-![mc](https://github.com/Mahmoud46/web_simple_applications/assets/81241007/9bd63436-ad29-4409-aa20-aacce5df66e8)
+![501521 DELL PC with xmas stuff (1)](https://github.com/Mahmoud46/web_simple_applications/assets/81241007/13fd1a84-30a6-4fda-9bbc-5e2c07848b79)
