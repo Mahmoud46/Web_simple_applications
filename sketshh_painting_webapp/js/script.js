@@ -123,7 +123,7 @@ toolBtns.forEach(btn => {
     });
 })
 
-sizeSlider.addEventListener('change', _ => brushWidth = sizeSlider.value);  // passing slider value ize brushS
+sizeSlider.addEventListener('input', handlingBrushWidth);  // passing slider value ize brushS
 
 colorsBtns.forEach(btn => {
     btn.addEventListener('click', _ => {
@@ -157,3 +157,17 @@ canvas.addEventListener('mousemove', drawing);
 canvas.addEventListener('mouseup', _ => {
     isDrawing = false;
 });
+
+
+// slidere
+function handlingBrushWidth(e) {
+    let target = e.target,
+        min = target.min,
+        max = target.max,
+        val = target.value;
+    brushWidth = sizeSlider.value
+    console.log(val);
+    target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
+    console.log(target.style.backgroundSize);
+}
+
