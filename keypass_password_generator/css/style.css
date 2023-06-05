@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sofia+Sans+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #6b879f;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(107, 135, 159, 0.9), rgba(206, 121, 75, 0.7)), url('../img/echelon_blog_passwordsecurity.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 450px;
+    background: rgba(223, 217, 198, 0.6);
+    backdrop-filter: blur(15px);
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.container h2 {
+    font-weight: 600;
+    font-size: 1.31rem;
+    padding: 5px;
+    position: relative;
+}
+
+.container h2::before {
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 2px;
+    background: #ad7d67;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wrapper {
+    margin: 1.25rem 1.75rem;
+}
+
+.wrapper .input-box {
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    height: 53px;
+    letter-spacing: 1.4px;
+    font-size: 1.06rem;
+    font-weight: 500;
+    border: none;
+    padding: 0 2.85rem 0 1rem;
+    color: #dfd9c6;
+    border: solid transparent 1px;
+    background: rgba(107, 135, 159, 0.5);
+}
+
+.input-box i {
+    position: absolute;
+    right: 13px;
+    line-height: 53px;
+    font-size: 20px;
+    color: #707070;
+    cursor: pointer;
+}
+
+.wrapper .pass-indicator {
+    width: 100%;
+    height: 4px;
+    background: #dfdfdf;
+    margin-top: 0.75rem;
+    position: relative;
+}
+
+.wrapper .pass-indicator::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: background 0.5s ease-in-out, width 0.5s linear;
+}
+
+.wrapper .pass-indicator#weak::before {
+    background: #e64aaa;
+    width: 20%;
+}
+
+.wrapper .pass-indicator#medium::before {
+    background: #f1c80b;
+    width: 50%;
+}
+
+.wrapper .pass-indicator#strong::before {
+    background: #4285f4;
+    width: 100%;
+}
+
+.wrapper .pass-length {
+    margin-top: 1.56rem 0 1.25rem;
+}
+
+.pass-length .detials {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pass-length input {
+    width: 100%;
+    height: 5px;
+    accent-color: #ce794b;
+}
+
+.pass-settings .options {
+    display: flex;
+    list-style: none;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.options .option {
+    width: calc(100% / 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+}
+
+.options .option label span {
+    transition: 0.5s ease-in-out all;
+}
+
+.options .option label {
+    padding: 10px;
+    transition: 0.5s ease-in-out all;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+}
+
+.options .option label:hover {
+    border: 1px solid #6b879f;
+}
+
+.options .option:first-child {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.options .option input:checked~label span,
+.options .option input:checked~label {
+    background: #6b879f;
+    color: #dfd9c6;
+}
+
+
+.options .option:first-child input {
+    opacity: 0.7;
+}
+
+.options .option label,
+.options .option input {
+    cursor: pointer;
+}
+
+.option input {
+    accent-color: #4285f4;
+    width: 1rem;
+    height: 1rem;
+}
+
+.wrapper .generate-btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.06rem;
+    padding: 0.94rem 0;
+    text-transform: uppercase;
+    margin: 0.94rem 0 1.3rem;
+    background: none;
+    color: #6b879f;
+    border: solid #6b879f 1px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s ease-in-out all;
+}
+
+.wrapper .generate-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: #6b879f;
+    z-index: -1;
+    transition: 0.5s ease-in-out all;
+}
+
+.wrapper .generate-btn:hover:before {
+    left: 0;
+}
+
+.wrapper .generate-btn:hover {
+    color: #dfd9c6;
+    border: solid transparent 1px;
+}
