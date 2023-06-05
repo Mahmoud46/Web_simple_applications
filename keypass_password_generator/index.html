@@ -32,7 +32,7 @@
                     <label class="title">Password Length</label>
                     <span></span>
                 </div>
-                <input type="range" min="1" max="30" value="15" step="1">
+                <input style="background-size: 12% 100%" type="range" min="1" max="30" value="15" step="1">
             </div>
             <div class="pass-settings">
                 <label class="title">Password Settings</label>
@@ -41,23 +41,30 @@
                         <input type="checkbox" id="lowercase" checked hidden>
                         <label for="lowercase"><span class="material-symbols-outlined">
                                 match_word
-                            </span></label>
+                            </span>
+                        </label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="uppercase" hidden>
                         <label for="uppercase"><span class="material-symbols-outlined">
                                 sort_by_alpha
-                            </span></label>
+                            </span>
+                            <p>uppercase</p>
+                        </label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="numbers" hidden>
-                        <label for="numbers"><span class="material-symbols-outlined">numbers</span></label>
+                        <label for="numbers">
+                            <p>Numbers</p><span class="material-symbols-outlined">numbers</span>
+                        </label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="symbols" hidden>
                         <label for="symbols"><span class="material-symbols-outlined">
                                 glyphs
-                            </span></label>
+                            </span>
+                            <p>symbols</p>
+                        </label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="exc-duplicate" hidden>
@@ -65,6 +72,7 @@
                             <span class="material-symbols-outlined">
                                 unfold_less_double
                             </span>
+                            <p>Exclude Duplicate</p>
                         </label>
                         <!-- Exclude Duplicate -->
                     </li>
@@ -72,7 +80,9 @@
                         <input type="checkbox" id="spaces" hidden>
                         <label for="spaces"><span class="material-symbols-outlined">
                                 space_bar
-                            </span></label>
+                            </span>
+                            <p>Include Spaces</p>
+                        </label>
                         <!-- Include Spaces -->
                     </li>
                 </ul>

@@ -43,6 +43,10 @@ let updatePassIndicator = _ => {
     passIndicator.id = lengthSlider.value <= 8 ? 'weak' : lengthSlider.value <= 16 ? "medium" : "strong";
 }
 let updateSlider = _ => {
+    let min = lengthSlider.min,
+        max = lengthSlider.max,
+        val = lengthSlider.value;
+    lengthSlider.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
     document.querySelector('.pass-length .detials span').innerText = lengthSlider.value;
     generatePassword();
     updatePassIndicator();
@@ -54,6 +58,8 @@ let copyPassword = _ => {
     }
     setTimeout(_ => copyBtn.classList.replace('fa-check', 'fa-copy'), 1500);
 }
+
+
 updateSlider();
 
 lengthSlider.addEventListener('input', updateSlider);
