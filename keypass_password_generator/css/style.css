@@ -26,6 +26,10 @@ body {
     padding: 10px;
 }
 
+.pass-settings .title {
+    text-transform: uppercase;
+}
+
 .logo {
     display: flex;
     justify-content: center;
