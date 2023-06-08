@@ -21,7 +21,7 @@ body {
 
 .container {
     width: 450px;
-    background: rgba(223, 217, 198, 0.6);
+    background: rgba(223, 217, 198, 0.9);
     backdrop-filter: blur(15px);
     padding: 10px;
 }
