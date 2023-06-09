@@ -57,8 +57,30 @@ body {
 
 .wrapper .text-input {
     display: flex;
+    position: relative;
 }
 
+.wrapper .text-input::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-top: #64725c solid 2px;
+    border-left: #64725c solid 2px;
+    top: 0;
+    left: 0;
+}
+
+.wrapper .text-input::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-bottom: #64725c solid 2px;
+    border-right: #64725c solid 2px;
+    bottom: 0;
+    right: 0;
+}
 
 .text-input textarea {
     height: 250px;
@@ -72,6 +94,10 @@ body {
     padding: 10px 15px;
 }
 
+.text-input textarea::-webkit-scrollbar {
+    width: 0;
+}
+
 .controls,
 li,
 .icons,
@@ -83,7 +109,7 @@ li,
 
 .controls {
     list-style: none;
-    padding: 12px 15px;
+    padding-top: 12px;
 }
 
 
@@ -105,7 +131,7 @@ li,
 
 .controls .row.to .icons {
     position: relative;
-    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .controls .row.to .icons::before {
