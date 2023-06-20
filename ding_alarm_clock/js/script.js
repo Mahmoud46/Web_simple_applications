@@ -1,7 +1,8 @@
 let currenTime = document.querySelector('h1'),
     selectMinue = document.querySelectorAll('select'),
     setAlarmBtn = document.querySelector('button'),
-    content = document.querySelector('.content');
+    content = document.querySelector('.content'),
+    alarmWindow = document.querySelector('.ring');
 let alarmTime, isAlarmSet = false,
     ringTone = new Audio('./audios/ringtone.mp3');
 
@@ -27,14 +28,15 @@ setInterval(_ => {
         m = date.getMinutes(),
         s = date.getSeconds(),
         ampm = date.getHours() >= 12 ? "PM" : "AM";
-    h = h > 10 ? h : `0${h}`;
-    m = m > 10 ? m : `0${m}`;
-    s = s > 10 ? s : `0${s}`;
+    h = h > 9 ? h : `0${h}`;
+    m = m > 9 ? m : `0${m}`;
+    s = s > 9 ? s : `0${s}`;
     currenTime.innerHTML = `${h}:${m}:${s} <span>${ampm}</span>`;
 
     if (alarmTime == `${h}:${m} ${ampm}`) {
         ringTone.play();
         ringTone.loop = true;
+        showAlarmWindow(true);
     }
 }, 1000);
 
@@ -57,3 +59,13 @@ let setAlarm = _ => {
     setAlarmBtn.innerText = "Clear Alarm";
 }
 setAlarmBtn.addEventListener('click', setAlarm);
+
+
+function showAlarmWindow(showAlarm) {
+    showAlarm ? alarmWindow.classList.contains('active') ? '' : alarmWindow.classList.add('active') : '';
+}
+
+alarmWindow.querySelectorAll('span')[2].addEventListener('click', _ => {
+    alarmWindow.classList.remove('active');
+    setAlarmBtn.click();
+});
