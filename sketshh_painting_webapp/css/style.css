@@ -208,3 +208,7 @@ body {
     right: 20px;
     pointer-events: none;
 }
+
+.sl {
+    margin-left: 10px;
+}
