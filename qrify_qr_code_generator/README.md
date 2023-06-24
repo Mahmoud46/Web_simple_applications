@@ -1,0 +1,1 @@
+## Qrify qr code generator
