@@ -12,6 +12,14 @@ body {
     min-height: 100vh;
 }
 
+p {
+    display: flex;
+}
+
+p:not(.abt) span {
+    margin-right: 10px;
+}
+
 .screenshot,
 #src-btn {
     position: fixed;
@@ -34,7 +42,9 @@ body {
     right: 0;
     background: #3457a6;
     color: #fcfcfc;
-    display: none;
+    opacity: 0;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
 }
 
 #src-btn span::before {
@@ -50,7 +60,8 @@ body {
 }
 
 #src-btn:hover span {
-    display: block;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .src-preview {
@@ -61,6 +72,7 @@ body {
     width: 100%;
     display: none;
     background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .src-preview.active {
@@ -72,8 +84,10 @@ body {
     left: 50%;
     width: 70%;
     height: 500px;
-    background: #000;
+    background: rgba(252, 252, 252, 0.5);
     transform: translate(-50%, -50%);
+    backdrop-filter: blur(15px);
+    border: none;
 }
 
 
