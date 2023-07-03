@@ -178,13 +178,21 @@ body,
 }
 
 .options input {
-    height: 4px;
+    -webkit-appearance: none;
+    height: 5px;
     max-width: 75px;
-    accent-color: #f07056;
-    outline: none;
+    background: rgba(252, 252, 252, 0.2);
     cursor: pointer;
+    overflow: hidden;
 }
 
+.options input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 2px;
+    height: 10px;
+    background: rgb(240, 112, 86, 0.5);
+    box-shadow: -400px 0 0 400px #f07056;
+}
 
 .options .video-timer {
     font-size: 14px;

@@ -22,7 +22,9 @@ let hideControls = _ => {
     if (mainVideo.paused) return;
     timer = setTimeout(_ => container.classList.remove('show-controls'), 3000)
 };
+
 hideControls();
+
 container.addEventListener('mousemove', _ => {
     container.classList.add('show-controls');
     clearTimeout(timer);
@@ -41,10 +43,10 @@ let formatTime = time => {
     return `${hours}:${minutes}:${seconds}`;
 };
 
-mainVideo.addEventListener('loadeddata', _ => {
+setTimeout(_ => {
     videoDuration.innerText = formatTime(mainVideo.duration);
     console.log('ready');
-});
+}, 300);
 
 let draggableProgressBar = e => {
     let timeLineWidth = videoTimeLine.clientWidth;
