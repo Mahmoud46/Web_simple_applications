@@ -36,10 +36,10 @@ let songs = [
         cover: './assets/imgs/Elwa2t Fat.jpg'
     },
     {
-        name: "Ana Al Ahly",
-        path: "./assets/audio/Amir Eid - Ana Al Ahly.mp3",
+        name: "Metkatef",
+        path: "./assets/audio/Amir Eid - Metkatef.mp3",
         artist: "Amir Eid",
-        cover: './assets/imgs/Ana Al Ahly.jpg'
+        cover: './assets/imgs/Metkatef.jpg'
     },
     {
         name: "Ana Rayh",
