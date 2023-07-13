@@ -94,7 +94,7 @@ function setMusic(i) {
     seekBar.value = 0;
     currentMusic = i;
     music.src = song.path;
-
+    song.name.length >= 12 ? musicName.classList.add('small') : musicName.classList.contains('small') ? musicName.classList.remove('small') : null;
     musicName.innerText = song.name;
     musicArtist.innerText = song.artist;
     songDisk.style.backgroundImage = `url('${song.cover}')`;

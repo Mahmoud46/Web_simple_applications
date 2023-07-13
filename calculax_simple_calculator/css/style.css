@@ -18,23 +18,30 @@ body {
 }
 
 .container {
-    width: 300px;
+    width: 350px;
     background: rgba(241, 181, 40, 0.2);
     backdrop-filter: blur(15px);
     color: #30302e;
 }
 
-.val {
+.output-val {
+    width: 350px;
     height: 100px;
-    width: 300px;
-    font-size: 30px;
+    background: rgba(48, 48, 46, 0.6);
     padding: 15px;
+}
+
+.val {
+    height: 100%;
+    width: 100%;
+    font-size: 35px;
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
     overflow: auto;
     padding: 0 20px;
     text-align: end;
+    color: rgba(252, 252, 252, 0.5);
 }
 
 .buttons {
@@ -52,10 +59,15 @@ body {
     transition: 0.5s ease-in-out all;
     background: rgba(75, 67, 45, 0.5);
     color: rgba(252, 252, 252, 0.5);
+    font-size: 18px;
 }
 
 .buttons button.r {
-    height: 70px;
+    height: 75px;
+}
+
+.buttons button.r.n {
+    font-size: 25px;
 }
 
 .buttons button:hover {
@@ -64,7 +76,7 @@ body {
 }
 
 h1 {
-    padding: 20px 0 0 20px;
+    padding: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
