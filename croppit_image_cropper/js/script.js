@@ -5,7 +5,7 @@ let imageWorkspace = document.querySelector('img.img-wrk'),
     menuBtn = document.querySelector('button.menu'),
     conrolBtnsList = document.querySelector('.control-buttons'),
     optionsConatiner = document.querySelector('.option-buttons');
-
+console.log("Thank you")
 let optionsList = [{
     value: 'rotate',
     body: `
@@ -135,7 +135,7 @@ let optionsList = [{
             <span>Free</span>
         </button>
     `,
-}];
+}], cropper;
 
 uploadBtn.addEventListener('click', _ => imageInput.click());
 imageInput.addEventListener('input', _ => {
@@ -217,28 +217,9 @@ imageInput.addEventListener('input', _ => {
                 });
             });
 
-            // download cropped image
-            downloadBtn.addEventListener('click', _ => {
-                downloadBtn.innerHTML = `<span class="material-symbols-outlined">
-                downloading
-                </span>`;
-                cropper.getCroppedCanvas().toBlob(blob => {
-                    let downloadUrl = window.URL.createObjectURL(blob);
-                    let a = document.createElement('a');
-                    a.href = downloadUrl;
-                    a.download = `${new Date().getTime()}_cropped_image.jpg`;
-                    a.click();
-                    downloadBtn.innerHTML = `<span class="material-symbols-outlined">
-                    download_done
-                    </span>`;
-                    setTimeout(_ => downloadBtn.innerHTML = `<span class="material-symbols-outlined">
-                    download
-                    </span>`, 1000);
-                });
-            });
         }
     }
-    let cropper = new Cropper(imageWorkspace, options);
+    cropper = new Cropper(imageWorkspace, options);
     cropper.replace(url);
     let cropeprContainers = document.querySelectorAll('.cropper-container');
     cropeprContainers.forEach(e => e.style.display = "none");
@@ -246,6 +227,27 @@ imageInput.addEventListener('input', _ => {
     optionsConatiner.innerHTML = '';
     conrolBtnsList.querySelector('button.active')?.classList.remove('active');
 });
+
+// download cropped image
+downloadBtn.addEventListener('click', _ => {
+    downloadBtn.innerHTML = `<span class="material-symbols-outlined">
+    downloading
+    </span>`;
+    cropper.getCroppedCanvas().toBlob(blob => {
+        let downloadUrl = window.URL.createObjectURL(blob);
+        let a = document.createElement('a');
+        a.href = downloadUrl;
+        a.download = `${new Date().getTime()}_cropped_image.jpg`;
+        a.click();
+        downloadBtn.innerHTML = `<span class="material-symbols-outlined">
+        download_done
+        </span>`;
+        setTimeout(_ => downloadBtn.innerHTML = `<span class="material-symbols-outlined">
+        download
+        </span>`, 1000);
+    });
+});
+
 menuBtn.addEventListener('click', _ => {
     menuBtn.classList.toggle('active');
     conrolBtnsList.classList.toggle('active');
